@@ -4,12 +4,12 @@ import Layout from "../layouts/Layout.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import CodeIcon from "../components/icons/Code.astro";
+import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
 import SocialPill from "../components/SocialPill.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
 ---
-
-<Layout title="Portfolio | Matias Salinas" description="">
+<Layout title="Portfolio | Matias Salinas" description="Portafolio de Matias Salinas - Desarrollador Backend">
   <main class="px-4">
     <SectionContainer class="py-44 pb-32">
       <img
@@ -30,10 +30,10 @@ import Projects from "../components/Projects.astro";
         </a>
       </h1>
       <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-w-[700px]">
-        Estudiante de Ingeniería en Sistemas. Desarrollador FullStack.
-      </h2>
-      <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-w-[700px]">
-        De Mendoza, Argentina
+        Ingeniero en Sistemas en formación. Especializado en desarrollo Backend.
+        <span class="text-indigo-200/90 block mt-2 text-lg">
+           Me dedico a diseñar la lógica y arquitectura interna de las aplicaciones web.
+        </span>
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
@@ -54,6 +54,19 @@ import Projects from "../components/Projects.astro";
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi" class="mt-8">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <ProfileCheckIcon class="size-7" />
+        Sobre mí
+      </h2>
+      <p class="text-lg text-gray-400 dark:text-gray-400">
+        ¡Hola! Me llamo <span class="text-indigo-100 font-semibold">Matías</span> y soy <span class="text-indigo-100 font-semibold">Ingeniero en Sistemas en formación</span>.
+        <br /><br />
+        Cuento con experiencia académica creando aplicaciones web completas, pero mi enfoque es el <span class="text-indigo-100 font-semibold">Backend</span>.
+        Disfruto diseñando <span class="text-indigo-100 font-semibold">Bases de Datos</span> eficientes, lógica de negocio compleja y <span class="text-indigo-100 font-semibold">APIs REST</span> seguras utilizando tecnologías como <span class="text-indigo-100 font-semibold">Java</span> y <span class="text-indigo-100 font-semibold">Spring Boot</span>.
+      </p>
     </SectionContainer>
   </main>
 </Layout>
