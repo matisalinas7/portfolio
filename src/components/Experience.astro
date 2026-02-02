@@ -1,0 +1,68 @@
+---
+const EDUCATION = [
+  {
+    date: "En curso (Actualidad)",
+    title: "Ingeniería en Sistemas de Información",
+    company: "Universidad Tecnológica Nacional (FRM)",
+    description:
+      "Adquisición de bases sólidas en Algoritmos y Estructuras de Datos, Paradigmas de Programación (POO), Diseño de Sistemas, Ingenieria de Software y Gestión de Bases de Datos Relacionales.",
+    link: "https://www.frm.utn.edu.ar/",
+  },
+  {
+    date: "Finalizado en Junio 2023",
+    title: "Programación Web Full Stack",
+    company: "Egg Cooperation",
+    description:
+      "Bootcamp intensivo de +500 horas teóricas y prácticas. con foco en Java, POO, Spring Boot y React.",
+    certificate: "/certificado_curso.pdf",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-700 ml-3">
+  {
+    EDUCATION.map((experience) => (
+      <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700" />
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400">
+          {experience.date}
+        </time>
+        <h3 class="text-lg font-semibold text-yellow-200 mt-2">
+          {experience.title}
+        </h3>
+        <p class="mb-2 text-base font-normal text-gray-200 text-pretty">
+          {experience.company}
+        </p>
+        <p class="mb-4 text-base font-normal text-gray-400 text-pretty max-w-2xl">
+          {experience.description}
+        </p>
+
+        {experience.certificate && (
+          <a
+            href={experience.certificate}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-3 py-1 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 transition"
+          >
+            <svg
+              class="w-3.5 h-3.5 me-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Certificado
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ol>

@@ -8,19 +8,20 @@ import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
 import SocialPill from "../components/SocialPill.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import MailIcon from "../components/icons/Mail.astro";
 ---
-<Layout title="Portfolio | Matias Salinas" description="Portafolio de Matias Salinas - Desarrollador Backend">
+
+<Layout
+  title="Portfolio | Matias Salinas"
+  description="Portafolio de Matias Salinas - Desarrollador Backend"
+>
   <main class="px-4">
     <SectionContainer class="py-44 pb-32">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="https://media.licdn.com/dms/image/v2/D4E03AQGY7-awntVzoA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689108647406?e=2147483647&v=beta&t=HYcbop-haYU_n-8zXICq84brpoyIt7M2pr9oT4LghuA"
-        alt="Foto Matias Salinas"
-      />
       <h1
         class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Hola! Soy Matías Salinas<a
+        Hola! Soy Matías<a
           href="https://linkedin.com/in/salinasmatias1/"
           target="_blank"
           rel="noopener"
@@ -30,9 +31,11 @@ import Projects from "../components/Projects.astro";
         </a>
       </h1>
       <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-w-[700px]">
-        Ingeniero en Sistemas en formación. Especializado en desarrollo Backend.
+        Estudiante avanzado de Ingeniería en Sistemas de Información.
+        Especializado en desarrollo Backend.
         <span class="text-indigo-200/90 block mt-2 text-lg">
-           Me dedico a diseñar la lógica y arquitectura interna de las aplicaciones web.
+          Me dedico a diseñar la lógica y arquitectura interna de las
+          aplicaciones web.
         </span>
       </h2>
 
@@ -56,17 +59,143 @@ import Projects from "../components/Projects.astro";
       <Projects />
     </SectionContainer>
 
+    <SectionContainer id="experiencia" class="mt-20">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-7"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path><path
+            d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path></svg
+        >
+        Formación Académica
+      </h2>
+      <Experience />
+    </SectionContainer>
+
     <SectionContainer id="sobre-mi" class="mt-8">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <ProfileCheckIcon class="size-7" />
         Sobre mí
       </h2>
       <p class="text-lg text-gray-400 dark:text-gray-400">
-        ¡Hola! Me llamo <span class="text-indigo-100 font-semibold">Matías</span> y soy <span class="text-indigo-100 font-semibold">Ingeniero en Sistemas en formación</span>.
+        ¡Hola! Me llamo <span class="text-indigo-100 font-semibold">Matías</span
+        > y soy <span class="text-indigo-100 font-semibold"
+          >estudiante avanzado de Ingenieria en Sistemas de Información</span
+        >.
         <br /><br />
-        Cuento con experiencia académica creando aplicaciones web completas, pero mi enfoque es el <span class="text-indigo-100 font-semibold">Backend</span>.
-        Disfruto diseñando <span class="text-indigo-100 font-semibold">Bases de Datos</span> eficientes, lógica de negocio compleja y <span class="text-indigo-100 font-semibold">APIs REST</span> seguras utilizando tecnologías como <span class="text-indigo-100 font-semibold">Java</span> y <span class="text-indigo-100 font-semibold">Spring Boot</span>.
+        Cuento con experiencia académica creando aplicaciones web completas, pero
+        mi enfoque es el <span class="text-indigo-100 font-semibold"
+          >Backend</span
+        >. Disfruto diseñando <span class="text-indigo-100 font-semibold"
+          >Bases de Datos</span
+        > eficientes, lógica de negocio compleja y <span
+          class="text-indigo-100 font-semibold">APIs REST</span
+        > seguras utilizando tecnologías como <span
+          class="text-indigo-100 font-semibold">Java</span
+        > y <span class="text-indigo-100 font-semibold">Spring Boot</span>.
       </p>
     </SectionContainer>
+
+    <SectionContainer id="contacto" class="mt-24 mb-10">
+      <div
+        class="border border-white/10 rounded-3xl p-8 md:p-10 bg-neutral-900/50 backdrop-blur-md text-center flex flex-col items-center gap-6 shadow-2xl"
+      >
+        <h2 class="text-3xl md:text-3xl font-bold text-white">
+          ¿Listo para trabajar juntos?
+        </h2>
+        <p class="text-gray-300 text-lg max-w-xl text-pretty">
+          Estoy buscando nuevas oportunidades para aportar mi visión en el
+          desarrollo Backend. Si tienes un proyecto en mente o quieres potenciar
+          tu equipo, hablemos.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+          <a
+            href="mailto:matisalinas.2000@gmail.com"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-lg font-medium text-black bg-white rounded-full hover:bg-gray-200 transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-gray-900"
+          >
+            <MailIcon class="size-6" />
+            Enviar correo
+          </a>
+
+          <button
+            id="btn-copy"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-lg font-medium text-white bg-gray-800 border border-gray-600 rounded-full hover:bg-gray-700 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+          >
+            <svg
+              id="icon-copy"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-6"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"
+              ></path><path
+                d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"
+              ></path></svg
+            >
+
+            <svg
+              id="icon-check"
+              class="hidden size-6 text-green-400"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M5 12l5 5l10 -10"></path></svg
+            >
+
+            <span id="text-copy">Copiar email</span>
+          </button>
+        </div>
+      </div>
+    </SectionContainer>
+
+    <script>
+      const btnCopy = document.getElementById("btn-copy");
+      const iconCopy = document.getElementById("icon-copy");
+      const iconCheck = document.getElementById("icon-check");
+      const textCopy = document.getElementById("text-copy");
+      const email = "matisalinas.2000@gmail.com";
+
+      if (btnCopy) {
+        btnCopy.addEventListener("click", () => {
+          navigator.clipboard.writeText(email).then(() => {
+            if (iconCopy) iconCopy.classList.add("hidden");
+            if (iconCheck) iconCheck.classList.remove("hidden");
+            if (textCopy) textCopy.innerText = "¡Copiado!";
+
+            setTimeout(() => {
+              if (iconCopy) iconCopy.classList.remove("hidden");
+              if (iconCheck) iconCheck.classList.add("hidden");
+              if (textCopy) textCopy.innerText = "Copiar email";
+            }, 2000);
+          });
+        });
+      }
+    </script>
   </main>
 </Layout>
