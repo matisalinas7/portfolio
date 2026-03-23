@@ -7,27 +7,29 @@ import LinkButton from "./LinkButton.astro";
 import Java from "./icons/Java.astro";
 import MySQL from "./icons/MySQL.astro";
 import Spring from "./icons/Spring.astro";
+import Preview from "./icons/Preview.astro";
+import LiveAPI from "./icons/LiveAPI.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: null,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    icon: null,
   },
   JAVA: {
     name: "Java",
     class: "bg-[#b07219] text-white",
-    icon: Java,
+    icon: null,
   },
   SPRING: {
     name: "Spring Boot",
     class: "bg-[#6db33f] text-white",
-    icon: Spring,
+    icon: null,
   },
   MYSQL: {
     name: "MySQL",
@@ -44,22 +46,42 @@ const TAGS = {
     class: "bg-purple-800 text-white",
     icon: null,
   },
-   JSF: {
+  JSF: {
     name: "Jakarta EE & JSF",
     class: "bg-red-800 text-white",
     icon: null,
-  }
-}
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#0db7ed] text-white",
+    icon: null,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-[#d63aff] text-white",
+    icon: null,
+  },
+};
 
 const PROJECTS = [
+  {
+    title: "Wallet API - Billetera Virtual",
+    description:
+      "API RESTful para gestión de saldos y transferencias entre usuarios. Implementa autenticación stateless con JWT, encriptación de contraseñas con BCrypt, arquitectura en capas con DTOs, manejo global de excepciones y tests unitarios. Deployada en Railway con MySQL en la nube.",
+    link: "https://wallet-api-production-7745.up.railway.app/swagger-ui/index.html",
+    github: "https://github.com/matisalinas7/wallet-api",
+    image: "/wallet-api.png",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.DOCKER, TAGS.JWT],
+  },
+
   {
     title: "API REST para Gestión Gastronómica",
     description:
       "Arquitectura RESTful escalable. Implementa seguridad avanzada (RBAC) con JWT, arquitectura en capas, patrones de diseño y estrategias de integridad de datos (Soft Delete). Simulación de entorno de producción real.",
-    link: "", 
+    link: "",
     github: "https://github.com/matisalinas7/elbuensabor-backend",
-    image: "/codigo-backend.png", 
-    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA],
+    image: "/codigo-backend.png",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.JWT],
   },
   {
     title: "Sistema Enterprise de Gestión de Trámites",
@@ -67,10 +89,10 @@ const PROJECTS = [
       "Aplicación corporativa desarrollada bajo un estricto enfoque de Desarrollo Dirigido por Modelos (MDD). Destaca por la fidelidad absoluta entre los Diagramas de Secuencia (Arquitectura) y la implementación del código Java.",
     link: "",
     github: "https://github.com/matisalinas7/gestionTramites",
-    image: "/listaTramites.png", 
+    image: "/listaTramites.png",
     tags: [TAGS.JSF, TAGS.JAVA, TAGS.ARCHITECTURE, TAGS.MYSQL],
   },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -89,10 +111,7 @@ const PROJECTS = [
         </div>
 
         <div class="w-full md:w-1/2 md:max-w-lg">
-          {/* CAMBIO 1: Título en blanco puro (text-white) */}
-          <h3 class="text-2xl font-bold text-white">
-            {title}
-          </h3>
+          <h3 class="text-2xl font-bold text-white">{title}</h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-wrap mb-2 gap-2">
               {tags.map((tag) => (
@@ -107,14 +126,11 @@ const PROJECTS = [
               ))}
             </ul>
 
-            {/* CAMBIO 2: Descripción en gris muy claro (text-gray-300) */}
-            <div class="mt-2 text-gray-300 text-pretty">
-              {description}
-            </div>
-            
+            <div class="mt-2 text-gray-300 text-pretty">{description}</div>
+
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
-                <a 
+                <a
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -125,13 +141,14 @@ const PROJECTS = [
                 </a>
               )}
               {link && (
-                <a 
+                <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-3 py-2 text-base text-white transition bg-gray-800 border border-gray-600 rounded-xl hover:bg-gray-900 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                 >
-                  Preview
+                  <LiveAPI class="size-6" />
+                  Live Api
                 </a>
               )}
             </footer>
