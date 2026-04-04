@@ -9,6 +9,8 @@ import MySQL from "./icons/MySQL.astro";
 import Spring from "./icons/Spring.astro";
 import Preview from "./icons/Preview.astro";
 import LiveAPI from "./icons/LiveAPI.astro";
+import AngularIcon from "./icons/Angular.astro";
+import TypeScriptIcon from "./icons/Typescript.astro";
 
 const TAGS = {
   NEXT: {
@@ -61,6 +63,16 @@ const TAGS = {
     class: "bg-[#d63aff] text-white",
     icon: null,
   },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-red-900 text-white",
+    icon: null,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-900 text-white",
+    icon: null,
+  },
 };
 
 const PROJECTS = [
@@ -68,12 +80,27 @@ const PROJECTS = [
     title: "Wallet API - Billetera Virtual",
     description:
       "API RESTful para gestión de saldos y transferencias entre usuarios. Implementa autenticación stateless con JWT, encriptación de contraseñas con BCrypt, arquitectura en capas con DTOs, manejo global de excepciones y tests unitarios. Deployada en Railway con MySQL en la nube.",
-    link: "https://wallet-api-production-7745.up.railway.app/swagger-ui/index.html",
+    link: "https://wallet-api-ysax.onrender.com/swagger-ui/index.html",
     github: "https://github.com/matisalinas7/wallet-api",
     image: "/wallet-api.png",
     tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.DOCKER, TAGS.JWT],
   },
-
+  {
+    title: "Sistema de Reservas",
+    description:
+      "Aplicación full stack para gestión de reservas. Backend con Spring Boot 4 en arquitectura en capas con DTOs, validación de solapamiento de horarios y manejo global de excepciones. Frontend con Angular 21, Reactive Forms, signals y sistema de notificaciones toast.",
+    link: "",
+    github: "https://github.com/matisalinas7/reservation-app",
+    image: "/reservas.png",
+    tags: [
+      TAGS.JAVA,
+      TAGS.SPRING,
+      TAGS.MYSQL,
+      TAGS.JPA,
+      TAGS.ANGULAR,
+      TAGS.TYPESCRIPT,
+    ],
+  },
   {
     title: "API REST para Gestión Gastronómica",
     description:
