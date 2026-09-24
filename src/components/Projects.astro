@@ -73,6 +73,21 @@ const TAGS = {
     class: "bg-blue-900 text-white",
     icon: null,
   },
+  SWAGGER: {
+    name: "Swagger",
+    class: "bg-[#85ea2d] text-black font-semibold",
+    icon: null,
+  },
+  FLYWAY: {
+    name: "Flyway",
+    class: "bg-[#cc0200] text-white",
+    icon: null,
+  },
+  JUNIT: {
+    name: "JUnit / Mockito",
+    class: "bg-[#25A162] text-white",
+    icon: null,
+  }
 };
 
 const PROJECTS = [
@@ -85,20 +100,18 @@ const PROJECTS = [
     image: "/wallet-api.png",
     tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.DOCKER, TAGS.JWT],
   },
-  {
-    title: "Sistema de Reservas",
+{
+    title: "API de Gestión de Reservas",
     description:
-      "Aplicación full stack para gestión de reservas. Backend con Spring Boot 4 en arquitectura en capas con DTOs, validación de solapamiento de horarios y manejo global de excepciones. Frontend con Angular 21, Reactive Forms, signals y sistema de notificaciones toast.",
+      "Desarrollo backend de una API REST para sistema de turnos. Construida con Spring Boot, integra seguridad RBAC (JWT), migraciones de base de datos (Flyway), testing (JUnit/Mockito) y documentación (Swagger). Lista para integración con frontend.",
     link: "",
     github: "https://github.com/matisalinas7/reservation-app",
-    image: "/reservas.png",
-    tags: [
+image: "https://placehold.co/800x450/1f2937/ffffff?text=API+de+Reservas%5Cn[Backend+Spring+Boot]",    tags: [
       TAGS.JAVA,
       TAGS.SPRING,
       TAGS.MYSQL,
-      TAGS.JPA,
-      TAGS.ANGULAR,
-      TAGS.TYPESCRIPT,
+      TAGS.JWT, 
+      TAGS.SWAGGER
     ],
   },
   {
@@ -121,7 +134,6 @@ const PROJECTS = [
   },
 ];
 ---
-
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
