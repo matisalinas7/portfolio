@@ -1,74 +1,52 @@
 ---
 import GitHub from "./icons/GitHub.astro";
-import NextJS from "./icons/NextJS.astro";
-import Tailwind from "./icons/Tailwind.astro";
-import Java from "./icons/Java.astro";
-import MySQL from "./icons/MySQL.astro";
-import Spring from "./icons/Spring.astro";
 import LiveAPI from "./icons/LiveAPI.astro";
-import AngularIcon from "./icons/Angular.astro";
-import TypeScriptIcon from "./icons/Typescript.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    icon: Tailwind,
   },
   JAVA: {
     name: "Java",
-    icon: Java,
   },
   SPRING: {
     name: "Spring Boot",
-    icon: Spring,
   },
   MYSQL: {
     name: "MySQL",
-    icon: MySQL,
   },
   ARCHITECTURE: {
     name: "Software Architecture",
-    icon: null,
   },
   JPA: {
     name: "JPA / Hibernate",
-    icon: null,
   },
   JSF: {
     name: "Jakarta EE & JSF",
-    icon: null,
   },
   DOCKER: {
     name: "Docker",
-    icon: null,
   },
   JWT: {
     name: "JWT",
-    icon: null,
   },
   ANGULAR: {
     name: "Angular",
-    icon: AngularIcon,
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    icon: TypeScriptIcon,
   },
   SWAGGER: {
     name: "Swagger",
-    icon: null,
   },
   FLYWAY: {
     name: "Flyway",
-    icon: null,
   },
   JUNIT: {
     name: "JUnit / Mockito",
-    icon: null,
   },
 };
 
@@ -158,17 +136,13 @@ const PROJECTS = [
           </p>
 
           <ul class="flex flex-wrap gap-1.5" aria-label="Tecnologías utilizadas">
-            {tags.map((tag) => {
-              const TagIcon = tag.icon;
-              return (
-                <li>
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono border border-line text-muted">
-                    {TagIcon && <TagIcon class="size-3.5 text-subtle" />}
-                    {tag.name}
-                  </span>
-                </li>
-              );
-            })}
+            {tags.map((tag) => (
+              <li>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono border border-line text-muted">
+                  {tag.name}
+                </span>
+              </li>
+            ))}
           </ul>
 
           <div class="flex items-center gap-3 pt-2">
