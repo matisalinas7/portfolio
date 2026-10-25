@@ -2,31 +2,45 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
+<footer class="mt-auto border-t border-neutral-200/70 dark:border-neutral-800/70 py-10">
   <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-500 dark:text-neutral-500"
   >
-    <span class="text-sm sm:text-center text-zinc-500/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://linkedin.com/in/salinasmatias1/" class="hover:underline"
-        >Matias Salinas</a
-      >.
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a
-          id="contacto"
-          href="mailto:matisalinas.2000@gmail.com"
-          class="hover:underline">Contacto</a
-        >
-      </li>
-    </ul>
+    <p class="flex items-center gap-1">
+      <span>© {currentYear}</span>
+      <a
+        href="https://linkedin.com/in/salinasmatias1/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium text-neutral-800 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+      >
+        Matias Salinas
+      </a>
+      <span class="text-neutral-400 dark:text-neutral-600">·</span>
+      <span>Backend Developer</span>
+    </p>
+
+    <nav class="flex items-center gap-6" aria-label="Navegación del pie de página">
+      <a
+        href="#sobre-mi"
+        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+      >
+        Sobre mí
+      </a>
+      <a
+        href="mailto:matisalinas.2000@gmail.com"
+        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+      >
+        Contacto
+      </a>
+      <a
+        href="https://github.com/matisalinas7"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+      >
+        GitHub
+      </a>
+    </nav>
   </div>
 </footer>

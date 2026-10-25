@@ -1,19 +1,48 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
 <header
-  class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto z-10"
+  class="fixed top-4 sm:top-6 inset-x-0 mx-auto w-fit max-w-[94vw] z-50 px-2 sm:px-3 py-1.5 rounded-full border border-neutral-200/80 dark:border-neutral-800/80 bg-white/80 dark:bg-[#121215]/85 backdrop-blur-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.6)] flex items-center gap-1 sm:gap-1.5 transition-all"
 >
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="#top" class="hover:text-blue-300 transition-colors">Inicio</a>
-    <a href="#proyectos" class="hover:text-blue-300 transition-colors"
-      >Proyectos</a
+  <a
+    href="#top"
+    class="px-2.5 py-1 rounded-full text-xs sm:text-sm font-bold tracking-tight text-neutral-900 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/80 transition-all"
+    aria-label="Ir al inicio"
+  >
+    MS
+  </a>
+
+  <span class="w-px h-4 bg-neutral-200 dark:bg-neutral-800/90 mx-0.5" aria-hidden="true"></span>
+
+  <nav class="flex items-center gap-0.5 sm:gap-1">
+    <a
+      href="#proyectos"
+      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
     >
-    <a href="#experiencia" class="hover:text-blue-300 transition-colors"
-      >Formación</a
+      Proyectos
+    </a>
+    <a
+      href="#experiencia"
+      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
     >
-    <a href="#sobre-mi" class="hover:text-blue-300 transition-colors"
-      >Sobre mí</a
+      Formación
+    </a>
+    <a
+      href="#sobre-mi"
+      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
     >
-    <a href="#contacto" class="hover:text-blue-300 transition-colors"
-      >Contacto</a
+      Sobre mí
+    </a>
+    <a
+      href="#contacto"
+      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
     >
+      Contacto
+    </a>
   </nav>
+
+  <span class="w-px h-4 bg-neutral-200 dark:bg-neutral-800/90 mx-0.5" aria-hidden="true"></span>
+
+  <ThemeToggle />
 </header>

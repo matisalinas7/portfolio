@@ -12,21 +12,51 @@ const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Prevent theme FOUC -->
+    <script is:inline>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (_) {}
+      })();
+    </script>
   </head>
 
-  <body>
+  <body
+    class="min-h-screen flex flex-col bg-[#fcfcfe] dark:bg-[#0a0a0c] text-neutral-800 dark:text-neutral-200 antialiased selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:bg-indigo-400/20 dark:selection:text-indigo-300 relative"
+  >
+    <!-- Background atmospheric glow and architectural subtle pattern -->
     <div
-      class="fixed top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
+      aria-hidden="true"
     >
+      <!-- Top radial glow -->
+      <div
+        class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-indigo-500/10 via-violet-500/5 to-transparent dark:from-indigo-500/15 dark:via-purple-500/5 blur-3xl opacity-70"
+      >
+      </div>
+
+      <!-- Subtle technical dot grid pattern -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_25%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] opacity-60"
+      >
+      </div>
     </div>
+
     <Header />
     <slot />
     <Footer />
@@ -40,14 +70,29 @@ const { description, title } = Astro.props;
 
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
-    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    background: #050505;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.4);
+    border-radius: 9999px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.4);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.7);
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(75, 85, 99, 0.7);
   }
 
   @media (prefers-reduced-motion: reduce) {

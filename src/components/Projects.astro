@@ -2,12 +2,9 @@
 import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Link from "./icons/Link.astro";
-import LinkButton from "./LinkButton.astro";
 import Java from "./icons/Java.astro";
 import MySQL from "./icons/MySQL.astro";
 import Spring from "./icons/Spring.astro";
-import Preview from "./icons/Preview.astro";
 import LiveAPI from "./icons/LiveAPI.astro";
 import AngularIcon from "./icons/Angular.astro";
 import TypeScriptIcon from "./icons/Typescript.astro";
@@ -15,106 +12,89 @@ import TypeScriptIcon from "./icons/Typescript.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
-    icon: null,
+    icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: null,
+    icon: Tailwind,
   },
   JAVA: {
     name: "Java",
-    class: "bg-[#b07219] text-white",
-    icon: null,
+    icon: Java,
   },
   SPRING: {
     name: "Spring Boot",
-    class: "bg-[#6db33f] text-white",
-    icon: null,
+    icon: Spring,
   },
   MYSQL: {
     name: "MySQL",
-    class: "bg-[#00758f] text-white",
-    icon: null,
+    icon: MySQL,
   },
   ARCHITECTURE: {
     name: "Software Architecture",
-    class: "bg-gray-700 text-white",
     icon: null,
   },
   JPA: {
     name: "JPA / Hibernate",
-    class: "bg-purple-800 text-white",
     icon: null,
   },
   JSF: {
     name: "Jakarta EE & JSF",
-    class: "bg-red-800 text-white",
     icon: null,
   },
   DOCKER: {
     name: "Docker",
-    class: "bg-[#0db7ed] text-white",
     icon: null,
   },
   JWT: {
     name: "JWT",
-    class: "bg-[#d63aff] text-white",
     icon: null,
   },
   ANGULAR: {
     name: "Angular",
-    class: "bg-red-900 text-white",
-    icon: null,
+    icon: AngularIcon,
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-blue-900 text-white",
-    icon: null,
+    icon: TypeScriptIcon,
   },
   SWAGGER: {
     name: "Swagger",
-    class: "bg-[#85ea2d] text-black font-semibold",
     icon: null,
   },
   FLYWAY: {
     name: "Flyway",
-    class: "bg-[#cc0200] text-white",
     icon: null,
   },
   JUNIT: {
     name: "JUnit / Mockito",
-    class: "bg-[#25A162] text-white",
     icon: null,
-  }
+  },
 };
 
 const PROJECTS = [
   {
+    number: "01",
     title: "Wallet API - Billetera Virtual",
     description:
-      "API RESTful para gestión de saldos y transferencias entre usuarios. Implementa autenticación stateless con JWT, encriptación de contraseñas con BCrypt, arquitectura en capas con DTOs, manejo global de excepciones y tests unitarios. Deployada en Railway con MySQL en la nube.",
+      "API RESTful para gestión de saldos y transferencias entre usuarios. Implementa autenticación stateless con JWT, encriptación de contraseñas con BCrypt, arquitectura en capas con DTOs, manejo global de excepciones y tests unitarios. Deployada en Render con MySQL en la nube.",
     link: "https://wallet-api-ysax.onrender.com/swagger-ui/index.html",
     github: "https://github.com/matisalinas7/wallet-api",
     image: "/wallet-api.png",
     tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.DOCKER, TAGS.JWT],
   },
-{
+  {
+    number: "02",
     title: "API de Gestión de Reservas",
     description:
       "Desarrollo backend de una API REST para sistema de turnos. Construida con Spring Boot, integra seguridad RBAC (JWT), migraciones de base de datos (Flyway), testing (JUnit/Mockito) y documentación (Swagger). Lista para integración con frontend.",
     link: "",
     github: "https://github.com/matisalinas7/reservation-app",
-image: "https://placehold.co/800x450/1f2937/ffffff?text=API+de+Reservas%5Cn[Backend+Spring+Boot]",    tags: [
-      TAGS.JAVA,
-      TAGS.SPRING,
-      TAGS.MYSQL,
-      TAGS.JWT, 
-      TAGS.SWAGGER
-    ],
+    image: "/reservas.png",
+    tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JWT, TAGS.SWAGGER],
   },
   {
+    number: "03",
     title: "API REST para Gestión Gastronómica",
     description:
       "Arquitectura RESTful escalable. Implementa seguridad avanzada (RBAC) con JWT, arquitectura en capas, patrones de diseño y estrategias de integridad de datos (Soft Delete). Simulación de entorno de producción real.",
@@ -124,6 +104,7 @@ image: "https://placehold.co/800x450/1f2937/ffffff?text=API+de+Reservas%5Cn[Back
     tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.JPA, TAGS.JWT],
   },
   {
+    number: "04",
     title: "Sistema Enterprise de Gestión de Trámites",
     description:
       "Aplicación corporativa desarrollada bajo un estricto enfoque de Desarrollo Dirigido por Modelos (MDD). Destaca por la fidelidad absoluta entre los Diagramas de Secuencia (Arquitectura) y la implementación del código Java.",
@@ -134,49 +115,93 @@ image: "https://placehold.co/800x450/1f2937/ffffff?text=API+de+Reservas%5Cn[Back
   },
 ];
 ---
-<div class="flex flex-col gap-y-16">
+
+<div class="flex flex-col gap-10">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="imagen del proyecto"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+    PROJECTS.map(({ number, image, title, description, tags, link, github }) => (
+      <article class="group relative rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-[#121215]/60 backdrop-blur-sm p-5 sm:p-7 md:p-8 transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-xl hover:shadow-neutral-900/[0.03] dark:hover:shadow-black/50">
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+          
+          {/* Mockup Frame & Image */}
+          <div class="w-full lg:w-1/2 flex-shrink-0">
+            <div class="rounded-xl overflow-hidden border border-neutral-200/90 dark:border-neutral-800/90 bg-neutral-100 dark:bg-neutral-950/80 shadow-sm transition-all duration-300 group-hover:border-neutral-300 dark:group-hover:border-neutral-700">
+              {/* Window Header */}
+              <div class="px-3.5 py-2 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/80 dark:bg-neutral-900/60 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
+                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
+                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
+                </div>
+                <span class="text-[11px] font-mono text-neutral-400 dark:text-neutral-500 truncate max-w-[180px]">
+                  {title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}
+                </span>
+                <span class="text-[11px] font-mono text-neutral-400 dark:text-neutral-500">
+                  {number}
+                </span>
+              </div>
+
+              {/* Image Viewport */}
+              <div class="relative overflow-hidden aspect-[16/10] bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center">
+                <img
+                  alt={`Captura del proyecto ${title}`}
+                  class="object-cover object-top w-full h-full transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                  src={image}
+                />
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-white">{title}</h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-wrap mb-2 gap-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 items-center`}
-                  >
-                    {tag.icon && <tag.icon class="size-4" />}
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          {/* Project Details */}
+          <div class="w-full lg:w-1/2 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-baseline justify-between gap-2 mb-2">
+                <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+                  {title}
+                </h3>
+              </div>
 
-            <div class="mt-2 text-gray-300 text-pretty">{description}</div>
+              {/* Tech Tags */}
+              <ul class="flex flex-wrap gap-1.5 my-3.5" aria-label="Tecnologías utilizadas">
+                {tags.map((tag) => {
+                  const TagIcon = tag.icon;
+                  return (
+                    <li>
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-medium border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/90 dark:bg-neutral-900/80 text-neutral-700 dark:text-neutral-300">
+                        {TagIcon && (
+                          <TagIcon class="size-3.5 text-neutral-500 dark:text-neutral-400" />
+                        )}
+                        {tag.name}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {/* Description */}
+              <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed text-pretty mt-3">
+                {description}
+              </p>
+            </div>
+
+            {/* Actions */}
+            <footer class="flex items-center gap-3 mt-6 pt-5 border-t border-neutral-100 dark:border-neutral-800/80">
               {github && (
                 <a
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 px-3 py-2 text-base text-white transition bg-gray-800 border border-gray-600 rounded-xl hover:bg-gray-900 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  class="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200
+                    border border-neutral-200 dark:border-neutral-700/80
+                    text-neutral-700 dark:text-neutral-300
+                    bg-white dark:bg-neutral-900
+                    hover:bg-neutral-50 dark:hover:bg-neutral-800
+                    hover:border-neutral-300 dark:hover:border-neutral-600
+                    hover:text-neutral-950 dark:hover:text-white
+                    active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 shadow-sm"
                 >
-                  <GitHub class="size-6" />
-                  Code
+                  <GitHub class="size-4" />
+                  <span>Code</span>
                 </a>
               )}
               {link && (
@@ -184,14 +209,20 @@ image: "https://placehold.co/800x450/1f2937/ffffff?text=API+de+Reservas%5Cn[Back
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 px-3 py-2 text-base text-white transition bg-gray-800 border border-gray-600 rounded-xl hover:bg-gray-900 hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  class="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200
+                    border border-transparent
+                    text-white dark:text-neutral-950
+                    bg-neutral-900 dark:bg-white
+                    hover:bg-neutral-800 dark:hover:bg-neutral-100
+                    active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 shadow-sm"
                 >
-                  <LiveAPI class="size-6" />
-                  Live Api
+                  <LiveAPI class="size-4" />
+                  <span>Live API</span>
                 </a>
               )}
             </footer>
           </div>
+
         </div>
       </article>
     ))
