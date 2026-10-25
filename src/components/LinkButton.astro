@@ -7,14 +7,9 @@ const { href } = Astro.props;
   href={href}
   role="link"
   class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium
-    rounded-lg border transition-all duration-200
-    bg-surface-light-2 dark:bg-surface-dark-2
-    border-neutral-200 dark:border-neutral-700
-    text-neutral-700 dark:text-neutral-300
-    hover:bg-surface-light-3 dark:hover:bg-surface-dark-3
-    hover:border-neutral-300 dark:hover:border-neutral-600
-    hover:text-neutral-900 dark:hover:text-white
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40
+    rounded-full border border-line text-muted transition-colors duration-200
+    hover:border-fg/40 hover:text-fg
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50
     active:scale-[0.97]"
 >
   <slot />

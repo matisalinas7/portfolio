@@ -116,113 +116,85 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-10">
+<div class="flex flex-col">
   {
     PROJECTS.map(({ number, image, title, description, tags, link, github }) => (
-      <article class="group relative rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-[#121215]/60 backdrop-blur-sm p-5 sm:p-7 md:p-8 transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-xl hover:shadow-neutral-900/[0.03] dark:hover:shadow-black/50">
-        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
-          
-          {/* Mockup Frame & Image */}
-          <div class="w-full lg:w-1/2 flex-shrink-0">
-            <div class="rounded-xl overflow-hidden border border-neutral-200/90 dark:border-neutral-800/90 bg-neutral-100 dark:bg-neutral-950/80 shadow-sm transition-all duration-300 group-hover:border-neutral-300 dark:group-hover:border-neutral-700">
-              {/* Window Header */}
-              <div class="px-3.5 py-2 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-neutral-50/80 dark:bg-neutral-900/60 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
-                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
-                  <span class="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
-                </div>
-                <span class="text-[11px] font-mono text-neutral-400 dark:text-neutral-500 truncate max-w-[180px]">
-                  {title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}
-                </span>
-                <span class="text-[11px] font-mono text-neutral-400 dark:text-neutral-500">
-                  {number}
-                </span>
-              </div>
-
-              {/* Image Viewport */}
-              <div class="relative overflow-hidden aspect-[16/10] bg-neutral-100 dark:bg-neutral-950 flex items-center justify-center">
-                <img
-                  alt={`Captura del proyecto ${title}`}
-                  class="object-cover object-top w-full h-full transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                  loading="lazy"
-                  src={image}
-                />
-              </div>
+      <article
+        data-reveal
+        class="group py-10 first:pt-0 last:pb-0 border-b border-line last:border-b-0"
+      >
+        {/* Captura */}
+        <div class="rounded-xl overflow-hidden border border-line bg-surface">
+          <div class="px-3.5 py-2 border-b border-line flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="size-2 rounded-full bg-line"></span>
+              <span class="size-2 rounded-full bg-line"></span>
+              <span class="size-2 rounded-full bg-line"></span>
             </div>
+            <span class="text-[11px] font-mono text-subtle truncate max-w-[60%]">
+              {title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}
+            </span>
+            <span class="text-[11px] font-mono text-subtle">{number}</span>
           </div>
 
-          {/* Project Details */}
-          <div class="w-full lg:w-1/2 flex flex-col justify-between h-full">
-            <div>
-              <div class="flex items-baseline justify-between gap-2 mb-2">
-                <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
-                  {title}
-                </h3>
-              </div>
-
-              {/* Tech Tags */}
-              <ul class="flex flex-wrap gap-1.5 my-3.5" aria-label="Tecnologías utilizadas">
-                {tags.map((tag) => {
-                  const TagIcon = tag.icon;
-                  return (
-                    <li>
-                      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-medium border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/90 dark:bg-neutral-900/80 text-neutral-700 dark:text-neutral-300">
-                        {TagIcon && (
-                          <TagIcon class="size-3.5 text-neutral-500 dark:text-neutral-400" />
-                        )}
-                        {tag.name}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-
-              {/* Description */}
-              <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed text-pretty mt-3">
-                {description}
-              </p>
-            </div>
-
-            {/* Actions */}
-            <footer class="flex items-center gap-3 mt-6 pt-5 border-t border-neutral-100 dark:border-neutral-800/80">
-              {github && (
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200
-                    border border-neutral-200 dark:border-neutral-700/80
-                    text-neutral-700 dark:text-neutral-300
-                    bg-white dark:bg-neutral-900
-                    hover:bg-neutral-50 dark:hover:bg-neutral-800
-                    hover:border-neutral-300 dark:hover:border-neutral-600
-                    hover:text-neutral-950 dark:hover:text-white
-                    active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 shadow-sm"
-                >
-                  <GitHub class="size-4" />
-                  <span>Code</span>
-                </a>
-              )}
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200
-                    border border-transparent
-                    text-white dark:text-neutral-950
-                    bg-neutral-900 dark:bg-white
-                    hover:bg-neutral-800 dark:hover:bg-neutral-100
-                    active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 shadow-sm"
-                >
-                  <LiveAPI class="size-4" />
-                  <span>Live API</span>
-                </a>
-              )}
-            </footer>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface">
+            <img
+              alt={`Captura del proyecto ${title}`}
+              class="object-cover object-top w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+              loading="lazy"
+              src={image}
+            />
           </div>
+        </div>
 
+        {/* Detalle */}
+        <div class="mt-6 flex flex-col gap-4">
+          <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-fg text-balance">
+            {title}
+          </h3>
+
+          <p class="text-[15px] sm:text-base text-muted leading-relaxed text-pretty max-w-2xl">
+            {description}
+          </p>
+
+          <ul class="flex flex-wrap gap-1.5" aria-label="Tecnologías utilizadas">
+            {tags.map((tag) => {
+              const TagIcon = tag.icon;
+              return (
+                <li>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono border border-line text-muted">
+                    {TagIcon && <TagIcon class="size-3.5 text-subtle" />}
+                    {tag.name}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div class="flex items-center gap-3 pt-2">
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border border-line text-muted hover:border-fg/40 hover:text-fg transition-colors duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+              >
+                <GitHub class="size-4" />
+                <span>Code</span>
+              </a>
+            )}
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-fg text-bg hover:opacity-85 transition-opacity duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+              >
+                <LiveAPI class="size-4" />
+                <span>Live API</span>
+              </a>
+            )}
+          </div>
         </div>
       </article>
     ))

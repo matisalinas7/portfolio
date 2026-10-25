@@ -2,42 +2,34 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-auto border-t border-neutral-200/70 dark:border-neutral-800/70 py-10">
+<footer class="mt-auto border-t border-line py-8">
   <div
-    class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-neutral-500 dark:text-neutral-500"
+    class="w-full max-w-page mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-subtle"
   >
-    <p class="flex items-center gap-1">
+    <p class="flex items-center gap-1.5 flex-wrap">
       <span>© {currentYear}</span>
       <a
         href="https://linkedin.com/in/salinasmatias1/"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-medium text-neutral-800 dark:text-neutral-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+        class="font-medium text-fg hover:text-accent transition-colors"
       >
         Matias Salinas
       </a>
-      <span class="text-neutral-400 dark:text-neutral-600">·</span>
+      <span aria-hidden="true">·</span>
       <span>Backend Developer</span>
     </p>
 
     <nav class="flex items-center gap-6" aria-label="Navegación del pie de página">
-      <a
-        href="#sobre-mi"
-        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
-      >
-        Sobre mí
-      </a>
-      <a
-        href="mailto:matisalinas.2000@gmail.com"
-        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
-      >
+      <a href="#sobre-mi" class="hover:text-fg transition-colors">Sobre mí</a>
+      <a href="mailto:matisalinas.2000@gmail.com" class="hover:text-fg transition-colors">
         Contacto
       </a>
       <a
         href="https://github.com/matisalinas7"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-neutral-900 dark:hover:text-white transition-colors"
+        class="hover:text-fg transition-colors"
       >
         GitHub
       </a>

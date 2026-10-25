@@ -3,8 +3,6 @@ import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
-import CodeIcon from "../components/icons/Code.astro";
-import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
 import SocialPill from "../components/SocialPill.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
@@ -16,176 +14,114 @@ import MailIcon from "../components/icons/Mail.astro";
   title="Portfolio | Matias Salinas - Backend Developer"
   description="Portafolio de Matias Salinas - Desarrollador Backend y estudiante avanzado de Ingeniería en Sistemas de Información."
 >
-  <main class="space-y-24 sm:space-y-32 pb-24">
+  <main class="space-y-24 sm:space-y-32 pb-24 sm:pb-32">
     {/* HERO SECTION */}
-    <SectionContainer id="top" class="pt-28 sm:pt-36 md:pt-44">
-      <div class="flex flex-col items-start gap-6 max-w-3xl">
-        
+    <SectionContainer id="top" class="pt-36 sm:pt-48 md:pt-56">
+      <div class="flex flex-col items-start gap-8 max-w-3xl">
         {/* Availability Badge */}
         <a
           href="https://linkedin.com/in/salinasmatias1/"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          data-reveal
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
 
         {/* Editorial Heading */}
-        <div class="space-y-3">
+        <div class="space-y-6" data-reveal>
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-neutral-900 dark:text-neutral-50 leading-[1.08]"
+            class="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tighter text-fg leading-[1.02] text-balance"
           >
-            Hola, soy <span class="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-500 dark:from-white dark:via-neutral-200 dark:to-neutral-400 bg-clip-text text-transparent">Matías</span>.
+            Hola, soy Matías<span class="text-accent">.</span>
           </h1>
 
-          <p
-            class="text-lg sm:text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 font-normal leading-snug max-w-2xl"
-          >
-            Estudiante avanzado de <span class="text-neutral-900 dark:text-white font-medium">Ingeniería en Sistemas de Información</span>.
-            Especializado en desarrollo <span class="text-indigo-600 dark:text-indigo-400 font-medium">Backend</span>.
+          <p class="text-xl sm:text-2xl text-muted font-normal leading-snug max-w-2xl text-pretty">
+            Estudiante avanzado de <span class="text-fg">Ingeniería en Sistemas de Información</span>.
+            Especializado en desarrollo <span class="text-fg">Backend</span>.
           </p>
         </div>
 
         {/* Focus Statement */}
-        <div class="border-l-2 border-indigo-500/40 dark:border-indigo-400/40 pl-4 py-1">
-          <p class="text-base sm:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">
-            Me dedico a diseñar la lógica y arquitectura interna de las aplicaciones web.
-          </p>
-        </div>
+        <p class="text-base sm:text-lg text-subtle leading-relaxed max-w-xl text-pretty" data-reveal>
+          Me dedico a diseñar la lógica y arquitectura interna de las aplicaciones web.
+        </p>
 
         {/* Social Actions */}
-        <nav class="flex items-center gap-3 pt-2 flex-wrap" aria-label="Enlaces sociales">
-          <SocialPill href="https://linkedin.com/in/salinasmatias1/">
-            <LinkedInIcon class="size-4 text-neutral-600 dark:text-neutral-400" />
-            <span>LinkedIn</span>
-          </SocialPill>
-
-          <SocialPill href="https://github.com/matisalinas7">
-            <GitHubIcon class="size-4 text-neutral-600 dark:text-neutral-400" />
-            <span>GitHub</span>
-          </SocialPill>
-
+        <nav class="flex items-center gap-3 flex-wrap" aria-label="Enlaces sociales" data-reveal>
           <a
             href="mailto:matisalinas.2000@gmail.com"
-            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-transparent bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs sm:text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-200 shadow-sm active:scale-95"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fg text-bg text-sm font-medium hover:opacity-85 transition-opacity duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
           >
             <MailIcon class="size-4" />
             <span>Contactar</span>
           </a>
+
+          <SocialPill href="https://linkedin.com/in/salinasmatias1/">
+            <LinkedInIcon class="size-4 text-subtle" />
+            <span>LinkedIn</span>
+          </SocialPill>
+
+          <SocialPill href="https://github.com/matisalinas7">
+            <GitHubIcon class="size-4 text-subtle" />
+            <span>GitHub</span>
+          </SocialPill>
         </nav>
       </div>
     </SectionContainer>
 
     {/* PROYECTOS SECTION */}
-    <SectionContainer id="proyectos">
-      <div class="flex items-center gap-3 mb-8 sm:mb-10">
-        <div class="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-neutral-900 dark:text-white">
-          <CodeIcon class="size-5" />
-        </div>
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-            Proyectos
-          </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-            Arquitectura de software, APIs RESTful y sistemas en producción
-          </p>
-        </div>
-      </div>
-
+    <SectionContainer
+      id="proyectos"
+      title="Proyectos"
+      subtitle="Arquitectura de software, APIs RESTful y sistemas en producción"
+    >
       <Projects />
     </SectionContainer>
 
     {/* FORMACIÓN ACADÉMICA SECTION */}
-    <SectionContainer id="experiencia">
-      <div class="flex items-center gap-3 mb-8 sm:mb-10">
-        <div class="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-neutral-900 dark:text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="size-5"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path>
-            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path>
-          </svg>
-        </div>
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-            Formación Académica
-          </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-            Bases formales en ingeniería de software y aprendizaje continuo
-          </p>
-        </div>
-      </div>
-
+    <SectionContainer
+      id="experiencia"
+      title="Formación Académica"
+      subtitle="Bases formales en ingeniería de software y aprendizaje continuo"
+    >
       <Experience />
     </SectionContainer>
 
     {/* SOBRE MÍ SECTION */}
-    <SectionContainer id="sobre-mi">
-      <div class="flex items-center gap-3 mb-8 sm:mb-10">
-        <div class="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 text-neutral-900 dark:text-white">
-          <ProfileCheckIcon class="size-5" />
-        </div>
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
-            Sobre mí
-          </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-            Perfil profesional, filosofía técnica y enfoque de desarrollo
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-[#121215]/60 backdrop-blur-sm p-6 sm:p-8 md:p-10 space-y-5 text-neutral-600 dark:text-neutral-400 text-base sm:text-lg leading-relaxed shadow-sm dark:shadow-black/40"
-      >
+    <SectionContainer
+      id="sobre-mi"
+      title="Sobre mí"
+      subtitle="Perfil profesional, filosofía técnica y enfoque de desarrollo"
+    >
+      <div class="space-y-6 text-lg sm:text-xl leading-relaxed text-muted max-w-2xl text-pretty" data-reveal>
         <p>
-          ¡Hola! Me llamo <strong class="font-semibold text-neutral-900 dark:text-white">Matías</strong> y soy <strong class="font-semibold text-neutral-900 dark:text-white">estudiante avanzado de Ingenieria en Sistemas de Información</strong>.
+          ¡Hola! Me llamo <strong class="font-medium text-fg">Matías</strong> y soy <strong class="font-medium text-fg">estudiante avanzado de Ingenieria en Sistemas de Información</strong>.
         </p>
 
         <p>
-          Cuento con experiencia académica creando aplicaciones web completas, pero mi enfoque es el <strong class="font-semibold text-indigo-600 dark:text-indigo-400">Backend</strong>. Disfruto diseñando <strong class="font-semibold text-neutral-900 dark:text-white">Bases de Datos</strong> eficientes, lógica de negocio compleja y <strong class="font-semibold text-neutral-900 dark:text-white">APIs REST</strong> seguras utilizando tecnologías como <strong class="font-semibold text-neutral-900 dark:text-white">Java</strong> y <strong class="font-semibold text-neutral-900 dark:text-white">Spring Boot</strong>.
+          Cuento con experiencia académica creando aplicaciones web completas, pero mi enfoque es el <strong class="font-medium text-fg">Backend</strong>. Disfruto diseñando <strong class="font-medium text-fg">Bases de Datos</strong> eficientes, lógica de negocio compleja y <strong class="font-medium text-fg">APIs REST</strong> seguras utilizando tecnologías como <strong class="font-medium text-fg">Java</strong> y <strong class="font-medium text-fg">Spring Boot</strong>.
         </p>
       </div>
     </SectionContainer>
 
     {/* CONTACTO SECTION */}
     <SectionContainer id="contacto">
-      <div
-        class="relative overflow-hidden rounded-3xl border border-neutral-200/90 dark:border-neutral-800/90 bg-gradient-to-b from-white to-neutral-50/70 dark:from-[#131317] dark:to-[#0c0c0f] p-8 sm:p-12 md:p-16 text-center flex flex-col items-center gap-6 shadow-[0_4px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-      >
-        {/* Subtle accent light inside card */}
-        <div
-          class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-32 bg-indigo-500/10 dark:bg-indigo-500/15 blur-3xl rounded-full pointer-events-none"
-          aria-hidden="true"
-        ></div>
-
-        <div class="space-y-3 max-w-xl relative">
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
+      <div class="border-t border-line pt-16 sm:pt-24 flex flex-col items-start gap-8" data-reveal>
+        <div class="space-y-5 max-w-2xl">
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter text-fg leading-[1.05] text-balance">
             ¿Listo para trabajar juntos?
           </h2>
-          <p class="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg leading-relaxed text-pretty">
+          <p class="text-lg sm:text-xl text-muted leading-relaxed text-pretty">
             Estoy buscando nuevas oportunidades para aportar mi visión en el desarrollo Backend. Si tienes un proyecto en mente o quieres potenciar tu equipo, hablemos.
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-3 items-center mt-2 relative w-full sm:w-auto">
+        <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center w-full sm:w-auto">
           <a
             href="mailto:matisalinas.2000@gmail.com"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-xl transition-all duration-200
-              bg-neutral-900 dark:bg-white text-white dark:text-neutral-950
-              hover:bg-neutral-800 dark:hover:bg-neutral-100
-              active:scale-[0.98] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-fg text-bg hover:opacity-85 transition-opacity duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
           >
             <MailIcon class="size-4" />
             <span>Enviar correo</span>
@@ -194,14 +130,7 @@ import MailIcon from "../components/icons/Mail.astro";
           <button
             id="btn-copy"
             type="button"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-xl transition-all duration-200
-              border border-neutral-200 dark:border-neutral-700/80
-              bg-white/80 dark:bg-neutral-900/80
-              text-neutral-700 dark:text-neutral-300
-              hover:bg-neutral-50 dark:hover:bg-neutral-800
-              hover:border-neutral-300 dark:hover:border-neutral-600
-              hover:text-neutral-950 dark:hover:text-white
-              active:scale-[0.98] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-line text-muted hover:border-fg/40 hover:text-fg transition-colors duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
           >
             <svg
               id="icon-copy"
@@ -227,7 +156,7 @@ import MailIcon from "../components/icons/Mail.astro";
 
             <svg
               id="icon-check"
-              class="hidden size-4 text-emerald-500"
+              class="hidden size-4 text-accent"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

@@ -21,23 +21,22 @@ const EDUCATION = [
 ];
 ---
 
-<div class="flex flex-col gap-6">
+<div class="flex flex-col">
   {
     EDUCATION.map((experience) => (
-      <div class="group relative rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/60 dark:bg-[#121215]/60 backdrop-blur-sm p-6 sm:p-7 transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-lg hover:shadow-neutral-900/[0.02] dark:hover:shadow-black/40">
-        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-3">
-          <div>
-            <div class="flex items-center gap-2 mb-1.5 flex-wrap">
-              <span class="text-xs font-mono font-medium px-2.5 py-0.5 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-100/80 dark:bg-neutral-800/60 text-neutral-600 dark:text-neutral-400">
-                {experience.date}
-              </span>
-            </div>
-            
-            <h3 class="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
+      <div
+        data-reveal
+        class="py-8 first:pt-0 last:pb-0 border-b border-line last:border-b-0 grid gap-3 sm:gap-8 sm:grid-cols-[10rem_minmax(0,1fr)]"
+      >
+        <p class="text-xs font-mono text-subtle pt-1.5">{experience.date}</p>
+
+        <div class="space-y-3 min-w-0">
+          <div class="space-y-1">
+            <h3 class="text-lg sm:text-xl font-semibold tracking-tight text-fg text-balance">
               {experience.title}
             </h3>
 
-            <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5">
+            <p class="text-sm font-medium text-accent">
               {experience.link ? (
                 <a
                   href={experience.link}
@@ -65,44 +64,36 @@ const EDUCATION = [
             </p>
           </div>
 
+          <p class="text-[15px] sm:text-base text-muted leading-relaxed max-w-2xl text-pretty">
+            {experience.description}
+          </p>
+
           {experience.certificate && (
-            <div class="flex-shrink-0">
-              <a
-                href={experience.certificate}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200
-                  border border-neutral-200 dark:border-neutral-700
-                  text-neutral-700 dark:text-neutral-300
-                  bg-neutral-50 dark:bg-neutral-900
-                  hover:bg-neutral-100 dark:hover:bg-neutral-800
-                  hover:text-neutral-950 dark:hover:text-white
-                  active:scale-[0.98] shadow-sm"
+            <a
+              href={experience.certificate}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border border-line text-muted hover:border-fg/40 hover:text-fg transition-colors duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            >
+              <svg
+                class="size-4 text-subtle"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <svg
-                  class="size-3.5 text-neutral-500 dark:text-neutral-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                <span>Ver Certificado</span>
-              </a>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              <span>Ver Certificado</span>
+            </a>
           )}
         </div>
-
-        <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl text-pretty">
-          {experience.description}
-        </p>
       </div>
     ))
   }

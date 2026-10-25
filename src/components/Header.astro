@@ -1,48 +1,42 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+
+const LINKS = [
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#experiencia", label: "Formación" },
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#contacto", label: "Contacto" },
+];
 ---
 
 <header
-  class="fixed top-4 sm:top-6 inset-x-0 mx-auto w-fit max-w-[94vw] z-50 px-2 sm:px-3 py-1.5 rounded-full border border-neutral-200/80 dark:border-neutral-800/80 bg-white/80 dark:bg-[#121215]/85 backdrop-blur-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.6)] flex items-center gap-1 sm:gap-1.5 transition-all"
+  class="fixed top-0 inset-x-0 z-50 border-b border-line/70 bg-bg/70 backdrop-blur-xl"
 >
-  <a
-    href="#top"
-    class="px-2.5 py-1 rounded-full text-xs sm:text-sm font-bold tracking-tight text-neutral-900 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/80 transition-all"
-    aria-label="Ir al inicio"
-  >
-    MS
-  </a>
-
-  <span class="w-px h-4 bg-neutral-200 dark:bg-neutral-800/90 mx-0.5" aria-hidden="true"></span>
-
-  <nav class="flex items-center gap-0.5 sm:gap-1">
+  <div class="mx-auto max-w-page px-5 sm:px-8 h-14 flex items-center justify-between gap-4">
     <a
-      href="#proyectos"
-      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
+      href="#top"
+      class="text-sm font-semibold tracking-tight text-fg hover:text-accent transition-colors"
+      aria-label="Ir al inicio"
     >
-      Proyectos
+      MS<span class="text-accent">.</span>
     </a>
-    <a
-      href="#experiencia"
-      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
-    >
-      Formación
-    </a>
-    <a
-      href="#sobre-mi"
-      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
-    >
-      Sobre mí
-    </a>
-    <a
-      href="#contacto"
-      class="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800/70 transition-all"
-    >
-      Contacto
-    </a>
-  </nav>
 
-  <span class="w-px h-4 bg-neutral-200 dark:bg-neutral-800/90 mx-0.5" aria-hidden="true"></span>
+    <div class="flex items-center gap-1 sm:gap-3 min-w-0">
+      <nav class="flex items-center gap-3 sm:gap-6" aria-label="Navegación principal">
+        {
+          LINKS.map(({ href, label }) => (
+            <a
+              href={href}
+              data-nav-link
+              class="relative py-1 text-[13px] sm:text-sm whitespace-nowrap text-subtle hover:text-fg data-[active]:text-fg transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 data-[active]:after:scale-x-100"
+            >
+              {label}
+            </a>
+          ))
+        }
+      </nav>
 
-  <ThemeToggle />
+      <ThemeToggle />
+    </div>
+  </div>
 </header>
